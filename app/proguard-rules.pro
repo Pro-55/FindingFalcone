@@ -1,21 +1,38 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+### Classes
+-keep class com.example.omdb.models.** { *; }
+-keepnames class com.example.omdb.util.** { *; }
+-keepnames class **.*Fragment*
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+### ServiceLoader Support
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+### Most of volatile fields are updated with AFU and should not be mangled
+-keepclassmembernames class kotlinx.** { volatile <fields>; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+### Core Components
+-keep class androidx.core.app.** { *; }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+### Ktor
+-keep class io.ktor.** { *; }
+-dontwarn groovy.lang.GroovyObject
+-dontwarn groovy.lang.MetaClass
+-dontwarn java.lang.management.ManagementFactory
+-dontwarn javax.management.InstanceNotFoundException
+-dontwarn javax.management.MBeanRegistrationException
+-dontwarn javax.management.MBeanServer
+-dontwarn javax.management.MalformedObjectNameException
+-dontwarn javax.management.ObjectInstance
+-dontwarn javax.management.ObjectName
+-dontwarn javax.naming.Context
+-dontwarn javax.naming.InitialContext
+-dontwarn javax.naming.NamingException
+-dontwarn javax.servlet.ServletContainerInitializer
+-dontwarn kotlin.Experimental$Level
+-dontwarn kotlin.Experimental
+-dontwarn org.codehaus.groovy.reflection.ClassInfo
+-dontwarn org.codehaus.groovy.runtime.BytecodeInterface8
+-dontwarn org.codehaus.groovy.runtime.ScriptBytecodeAdapter
+-dontwarn org.codehaus.groovy.runtime.callsite.CallSite
+-dontwarn org.codehaus.groovy.runtime.callsite.CallSiteArray
+-dontwarn org.codehaus.janino.ClassBodyEvaluator
+-dontwarn sun.reflect.Reflection
