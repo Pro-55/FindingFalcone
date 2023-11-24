@@ -1,6 +1,6 @@
 ### Classes
--keep class com.example.omdb.models.** { *; }
--keepnames class com.example.omdb.util.** { *; }
+-keep class com.example.findingfalcone.models.** { *; }
+-keepnames class com.example.findingfalcone.util.** { *; }
 -keepnames class **.*Fragment*
 
 ### ServiceLoader Support

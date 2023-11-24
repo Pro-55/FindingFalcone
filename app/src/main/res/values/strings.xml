@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Finding Falcone</string>
 
+    <string name="label_selection_info">Selection info:</string>
+    <string name="label_selection_details">Planets: %d/4\nShips: %d/4\nEstimated time: %d</string>
+    <string name="label_planet_details">%s\n[Distance: %d]</string>
+    <string name="label_vehicle_details">Speed: %d\nMax Distance: %d</string>
+    <string name="label_falcone_found">Falcone found!</string>
+    <string name="label_falcone_not_found">Falcone not found!</string>
+    <string name="label_invalid_token">Invalid token!</string>
+
+    <string name="msg_falcone_found">Al Falcone found on %s in %d time. Do you want to try again?</string>
+    <string name="msg_falcone_not_found">Do you want to continue?</string>
+    <string name="msg_invalid_token">Re-Fetch the token &amp; try again?</string>
+
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+
     <string name="error_unknown_host">Failed to connect…</string>
     <string name="error_invalid_path">We couldn\'t find the data…</string>
     <string name="error_invalid_request">Failed to process the request…</string>

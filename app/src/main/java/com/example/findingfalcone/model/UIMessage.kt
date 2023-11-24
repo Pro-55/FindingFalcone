@@ -1,6 +1,6 @@
 package com.example.findingfalcone.model
 
-import android.content.Context
+import android.content.res.Resources
 import androidx.annotation.StringRes
 
 sealed class UIMessage {
@@ -10,8 +10,8 @@ sealed class UIMessage {
         val args: Array<Any> = emptyArray()
     ) : UIMessage()
 
-    fun getMessage(context: Context) = when (this) {
+    fun getMessage(resources: Resources) = when (this) {
         is DynamicString -> value
-        is StringResource -> context.getString(resId, args)
+        is StringResource -> resources.getString(resId, args)
     }
 }

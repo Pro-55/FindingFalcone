@@ -27,6 +27,11 @@ android {
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
+            buildConfigField(
+                "String",
+                "BaseUrl",
+                project.property("DEV_URL") as String
+            )
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -36,6 +41,11 @@ android {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
+            buildConfigField(
+                "String",
+                "BaseUrl",
+                project.property("PROD_URL") as String
+            )
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

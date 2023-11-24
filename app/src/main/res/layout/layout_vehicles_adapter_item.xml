@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_vehicle_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:singleLine="true"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/dimen_16sp"
+            app:layout_constrainedWidth="true"
+            tools:text="Vehicle" />
+
+        <TextView
+            android:id="@+id/txt_vehicle_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:maxLines="2"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/dimen_12sp"
+            app:layout_constrainedWidth="true"
+            tools:text="@string/label_vehicle_details" />
+
+        <View
+            android:id="@+id/view_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="?attr/colorOutline" />
+    </LinearLayout>
+</layout>
