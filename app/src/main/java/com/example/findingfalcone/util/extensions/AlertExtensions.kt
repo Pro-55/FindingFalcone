@@ -80,5 +80,6 @@ fun FragmentActivity.showConfirmationDialog(
         .setMessage(message)
         .setPositiveButton(positiveButton) { _, _ -> positiveButtonClick.invoke() }
         .setNegativeButton(negativeButton) { _, _ -> negativeButtonClick.invoke() }
+        .setCancelable(false)
         .show()
 }
