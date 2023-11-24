@@ -62,6 +62,19 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/cpi_find_loader"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="@dimen/dimen_0dp"
+                    android:indeterminate="true"
+                    android:padding="@dimen/dimen_8dp"
+                    android:visibility="gone"
+                    app:indicatorColor="?attr/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@id/fab_find"
+                    app:layout_constraintEnd_toEndOf="@id/fab_find"
+                    app:layout_constraintStart_toStartOf="@id/fab_find"
+                    app:layout_constraintTop_toTopOf="@id/fab_find" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 

@@ -17,6 +17,7 @@ import com.example.findingfalcone.model.Resource
 import com.example.findingfalcone.model.Vehicle
 import com.example.findingfalcone.ui.selection.vehicles_sheet.VehiclesSheetFragment
 import com.example.findingfalcone.util.extensions.gone
+import com.example.findingfalcone.util.extensions.invisible
 import com.example.findingfalcone.util.extensions.showConfirmationDialog
 import com.example.findingfalcone.util.extensions.showShortSnackBar
 import com.example.findingfalcone.util.extensions.visible
@@ -141,7 +142,14 @@ class SelectionFragment : BaseFragment() {
         viewModel.falconeStatus.observe(viewLifecycleOwner) { resource ->
             if (resource == null) return@observe
             when (resource) {
-                is Resource.Loading -> adapter?.setIsEnabled(false)
+                is Resource.Loading -> {
+                    binding.fabFind.apply {
+                        invisible()
+                        isEnabled = false
+                    }
+                    binding.cpiFindLoader.visible()
+                    adapter?.setIsEnabled(false)
+                }
                 is Resource.Success -> {
                     viewModel.resetFalconeStatus()
 
@@ -172,11 +180,21 @@ class SelectionFragment : BaseFragment() {
                         )
                     }
 
+                    binding.fabFind.apply {
+                        visible()
+                        isEnabled = true
+                    }
+                    binding.cpiFindLoader.gone()
                     adapter?.setIsEnabled(true)
                 }
                 is Resource.Error -> {
                     showShortSnackBar(message = resource.msg.getMessage(resources))
                     viewModel.resetFalconeStatus()
+                    binding.fabFind.apply {
+                        visible()
+                        isEnabled = true
+                    }
+                    binding.cpiFindLoader.gone()
                     adapter?.setIsEnabled(true)
                 }
             }
